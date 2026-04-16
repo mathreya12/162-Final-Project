@@ -1,0 +1,4 @@
+__pycache__/
+*.sol
+*.log
+.DS_Store
