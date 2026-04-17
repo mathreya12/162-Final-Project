@@ -13,13 +13,17 @@ def main():
     y = ampl.get_variable("y")
     t = ampl.get_variable("T")
     
-    total_revenue = 0
     print("\nVenue Revenue Contribution:")
-    for i, instance in y.instances():
-        if instance.value() > 0.5:
-            v_rev = sum(inst.value() * 10 for (idx_i, j), inst in t.instances() if idx_i == i)
+    total_revenue = 0
+
+    t_values = t.get_values().to_dict() 
+    y_values = y.get_values().to_dict()
+
+    for venue in ampl.get_set("VENUES"):
+        if y_values[venue] > 0.5:
+            v_rev = sum(t_values[venue, sport] * 10 for sport in ampl.get_set("SPORTS"))
             total_revenue += v_rev
-            print(f"Venue {i}: Generated ${v_rev}k in ticket sales")
+            print(f"Venue {venue}: Generated ${v_rev}k in ticket sales")
             
     print(f"\nTotal Ticket Revenue: ${total_revenue}k")
 
