@@ -2,8 +2,8 @@ from amplpy import AMPL
 
 def main():
     ampl = AMPL()
-    ampl.read("task2/task2.mod")
-    ampl.read_data("project.dat")
+    ampl.read("task2.mod")
+    ampl.read_data("../project.dat")
     ampl.set_option("solver", "highs")
     ampl.solve()
 

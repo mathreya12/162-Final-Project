@@ -10,4 +10,4 @@ This project uses Mixed-Integer Programming (MIP) to optimize venue selection an
 
 ## How to Run
 1. Ensure you have the `amplpy` library installed: `pip install amplpy`
-2. Run any task: `python3 task1.py`
+2y. Run any task: `python3 task1.py`

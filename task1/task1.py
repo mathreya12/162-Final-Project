@@ -2,12 +2,12 @@ from amplpy import AMPL
 
 def main():
     ampl = AMPL()
-    ampl.read("task1/task1.mod")
-    ampl.read_data("project.dat")
+    ampl.read("task1.mod")
+    ampl.read_data("../project.dat")
     ampl.set_option("solver", "highs")
     ampl.solve()
 
-    print(f"Task 1 Results")
+    print("Task 1 Results") 
     print(f"Total Activation Cost: ${ampl.get_objective('TotalCost').value()}k")
     
     y = ampl.get_variable("y")
