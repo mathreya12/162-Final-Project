@@ -15,7 +15,7 @@ def main():
     
     for i, instance in y.instances():
         if instance.value() > 0.5:
-            assigned = [j for (idx_i, j), inst in x.instances() if idx_i == i and inst.value() > 0.5]
+            assigned = [j for (idx_i, j), inst in x.instances() if idx_i == i[0] and inst.value() > 0.5]
             print(f"Venue {i} active: hosting {', '.join(assigned)}")
 
 if __name__ == "__main__":
